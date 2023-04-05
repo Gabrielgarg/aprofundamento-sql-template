@@ -1,3 +1,4 @@
+-- Active: 1680611544484@@127.0.0.1@3306
 -- Conecte o arquivo pratica-aprofundamento-sql.db com a extensão MySQL e ative a conexão aqui
 
 -- Deletar tabela
@@ -40,6 +41,28 @@ VALUES
     (9, "blastoise", "water", 79, 83, 100, 85, 105, 78);
 
 -- Buscar todos os pokemons
+
 SELECT * FROM pokemons;
 
 -- Práticas
+-- * = todos os itens, de pokemons, aonde speed é >= 60
+SELECT * FROM pokemons WHERE speed >= 60; 
+
+-- mostra so o id nome e speed.
+SELECT id,name,speed FROM pokemons WHERE speed >= 60; 
+
+SELECT * FROM pokemons WHERE attack >= 60 AND special_attack >=60; 
+
+SELECT name FROM pokemons WHERE name LIKE "%saur"; 
+
+SELECT AVG(hp) FROM pokemons;
+
+SELECT COUNT(*) as countl FROM pokemons;
+
+SELECT * FROM pokemons ORDER BY defense DESC;
+
+SELECT COUNT(*) as Quantidade_de_cada_tipo, type FROM pokemons GROUP BY type;
+
+SELECT * FROM pokemons LIMIT 3;
+
+SELECT * FROM pokemons WHERE type = "fire" OR type = "grass" ORDER BY attack ASC LIMIT 3 OFFSET 3;
